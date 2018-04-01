@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Z28SAMPLE01</title>
+
+		<script id="sap-ui-bootstrap"
+			src="../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m,sap.ui.layout"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"Z28SAMPLE01": ""}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+/*//render a buttom 		
+		var obtn1 = new sap.m.Button({text : "Register" ,
+									 type : sap.m.ButtonType.Emphasized });
+									// icon : "sapui5logo.png"
+		var obtn2 = new sap.m.Button({text : "Register" ,
+									 type : sap.m.ButtonType.Back
+									// icon : "sapui5logo.png"									
+		});
+		obtn1.placeAt("content")
+			obtn2.placeAt("content")*/
+var oSimpleform =	new sap.ui.layout.form.SimpleForm({
+		maxContainerCols : 1,
+		width : "100%",
+		content : [
+			new sap.m.Label({text : "Emplyoee Name"}),
+			new sap.m.Input({placeholder : "Name"}),
+			new sap.m.Label({text : "Department"}),
+			new sap.m.ComboBox({
+				items:[
+					    new sap.ui.core.Item({text:"Operations"}),
+						new sap.ui.core.Item({text:"RD"}),
+						new sap.ui.core.Item({text: "IT"}),
+					]}),
+				
+		new sap.m.Label({text : "Role"}),
+			new sap.m.ComboBox({
+				items:[
+					    new sap.ui.core.Item({text:"Developer"}),
+						new sap.ui.core.Item({text:"Manager"}),
+						new sap.ui.core.Item({text: "SeniorManager"}),
+					]}),
+					
+		new sap.m.Label({text : "email"}),	
+		new sap.m.Input({placeholder : "email"}),
+		new sap.m.Label({text : "PAN"}),	
+		new sap.m.Input({placeholder : "Pan"}),
+		new sap.m.Label({text : "Country"}),	
+		new sap.m.Input({placeholder : "Country"}),		
+		new sap.m.Label({text : "ZIPCode"}),	
+		new sap.m.Input({placeholder : "ZIPCode"})		
+			    ],
+			    
+			title : new sap.ui.core.Title({text : "Employee Form"})
+		})	;	
+		
+	var oPage1 =	new sap.m.Page({
+			title : "Employee Registration Form",
+			content : [oSimpleform],
+					footer: new sap.m.Bar({
+				contentRight : [
+					new sap.m.Button({text : "Register"}) 
+					]
+			})
+		})
+		
+		new sap.m.App({
+			pages:[oPage1],
+			}).placeAt("content")
+		
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>
